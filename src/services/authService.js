@@ -11,13 +11,13 @@ const storeSession = (data) => {
 
 const authService = {
   register: async (payload) => {
-    const { data } = await api.post('/auth/register', payload)
+    const { data } = await api.post('auth/register', payload)
     storeSession(data)
     return data
   },
 
   login: async (payload) => {
-    const { data } = await api.post('/auth/login', payload)
+    const { data } = await api.post('auth/login', payload)
     storeSession(data)
     return data
   },
@@ -27,7 +27,7 @@ const authService = {
     localStorage.removeItem('user')
   },
 
-  getProfile: () => api.get('/users/me'),
+  getProfile: () => api.get('users/me'),
 }
 
 export default authService
