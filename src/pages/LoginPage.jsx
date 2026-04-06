@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link as RouterLink, useNavigate } from 'react-router-dom'
 import Alert from '@mui/material/Alert'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
@@ -126,6 +126,16 @@ function LoginPage() {
               >
                 {loading ? <CircularProgress size={22} /> : 'Login'}
               </Button>
+
+              <Typography variant="body2" align="center" sx={{ mt: 2, color: '#64748b' }}>
+                Don't have an account?{' '}
+                <RouterLink
+                  to="/signup"
+                  style={{ color: '#60a5fa', fontWeight: 600, textDecoration: 'none' }}
+                >
+                  Sign up
+                </RouterLink>
+              </Typography>
             </Stack>
           </Box>
         </Paper>
