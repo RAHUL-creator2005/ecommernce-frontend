@@ -16,15 +16,14 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import {
-  FavoriteBorder,
-  Menu,
   Logout,
-  PersonOutline,
+  Menu,
+  FavoriteBorder,
   Search,
   ShoppingCartOutlined,
-  Storefront,
 } from '@mui/icons-material'
 import { useAuth } from '../context/AuthContext'
+import Logo from './Logo'
 
 const baseLinks = [
   { to: '/', label: 'Home', end: true },
@@ -95,7 +94,7 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
               color: 'inherit',
             }}
           >
-            <Storefront />
+            <Logo color="#f1f5f9" size={32} />
             <Typography variant="h6" sx={{ fontWeight: 800, letterSpacing: 0.4, fontSize: { xs: 20, md: 22 } }}>
               ShopWave
             </Typography>
