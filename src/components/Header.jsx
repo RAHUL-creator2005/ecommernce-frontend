@@ -14,6 +14,7 @@ import ListItemText from '@mui/material/ListItemText'
 import TextField from '@mui/material/TextField'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
+import Divider from '@mui/material/Divider'
 import {
   FavoriteBorder,
   Menu,
@@ -178,7 +179,11 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
                   >
                     Login
                   </Button>
-                  <Typography sx={{ px: 0.5, color: '#94a3b8' }}>/</Typography>
+                    <Divider
+                      orientation="vertical"
+                      flexItem
+                      sx={{ mx: 1, height: 16, alignSelf: 'center', borderColor: '#334155' }}
+                    />
                   <Button
                     component={RouterLink}
                     to="/signup"
