@@ -170,38 +170,60 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
                     component={RouterLink}
                     to="/login"
                     size="small"
-                    variant="text"
+                    variant="contained"
                     sx={{
-                      color: '#60a5fa',
+                      bgcolor: '#60a5fa',
+                      color: '#0b1220',
                       textTransform: 'none',
-                      '&:hover': { color: '#93c5fd' },
+                      fontWeight: 700,
+                      borderRadius: 1.5,
+                      px: 2,
+                      '&:hover': { bgcolor: '#93c5fd' },
                     }}
                   >
                     Login
                   </Button>
-                    <Divider
-                      orientation="vertical"
-                      flexItem
-                      sx={{ mx: 1, height: 16, alignSelf: 'center', borderColor: '#334155' }}
-                    />
+                  <Divider
+                    orientation="vertical"
+                    flexItem
+                    sx={{ mx: 2, height: 18, alignSelf: 'center', borderColor: '#334155' }}
+                  />
                   <Button
                     component={RouterLink}
                     to="/signup"
                     size="small"
                     variant="contained"
-                    sx={{ bgcolor: '#f0c14b', color: '#111827', textTransform: 'none' }}
+                    sx={{
+                      bgcolor: '#f0c14b',
+                      color: '#111827',
+                      textTransform: 'none',
+                      fontWeight: 700,
+                      borderRadius: 1.5,
+                      px: 2,
+                      '&:hover': { bgcolor: '#eab308' },
+                    }}
                   >
                     Signup
                   </Button>
                 </Box>
-                <IconButton
+                <Button
+                  component={RouterLink}
+                  to="/login"
                   size="small"
-                  aria-label="account"
-                  color="inherit"
-                  sx={{ display: { xs: 'inline-flex', md: 'none' } }}
+                  variant="contained"
+                  sx={{
+                    display: { xs: 'inline-flex', md: 'none' },
+                    bgcolor: '#60a5fa',
+                    color: '#0b1220',
+                    textTransform: 'none',
+                    fontWeight: 700,
+                    borderRadius: 1.5,
+                    px: 2,
+                    '&:hover': { bgcolor: '#93c5fd' },
+                  }}
                 >
-                  <PersonOutline fontSize="small" />
-                </IconButton>
+                  Login
+                </Button>
               </>
             )}
           </Box>
