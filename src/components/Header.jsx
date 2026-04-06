@@ -89,9 +89,10 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
             sx={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: 1.2,
+              gap: { xs: 0.5, md: 1.2 },
               textDecoration: 'none',
               color: 'inherit',
+              flexShrink: 0,
             }}
           >
             <Logo color="#f1f5f9" size={32} />
@@ -108,7 +109,7 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
             ))}
           </Box>
 
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: { xs: 0.2, sm: 1 } }}>
             <IconButton
               size="small"
               aria-label="open menu"
@@ -126,7 +127,12 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
             >
               <Search fontSize="small" />
             </IconButton>
-            <IconButton size="small" aria-label="wishlist" color="inherit">
+            <IconButton
+              size="small"
+              aria-label="wishlist"
+              color="inherit"
+              sx={{ display: { xs: 'none', sm: 'inline-flex' } }}
+            >
               <FavoriteBorder fontSize="small" />
             </IconButton>
             <IconButton
@@ -135,11 +141,12 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
               color="inherit"
               component={RouterLink}
               to="/cart"
+              sx={{ p: { xs: 0.5, sm: 1 } }}
             >
               <ShoppingCartOutlined fontSize="small" />
             </IconButton>
             {isLoggedIn ? (
-              <Box sx={{ display: 'flex', alignItems: 'center', ml: 1.5, gap: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', ml: { xs: 1, md: 1.5 }, gap: { xs: 0.5, md: 1 } }}>
                 <Avatar
                   sx={{
                     width: 32,
@@ -156,7 +163,16 @@ function Header({ showSearch = false, searchValue = '', onSearchChange }) {
                   size="small"
                   variant="text"
                   onClick={handleLogout}
-                  sx={{ color: '#e2e8f0', textTransform: 'none' }}
+                  sx={{ 
+                    color: '#e2e8f0', 
+                    textTransform: 'none',
+                    minWidth: 'auto',
+                    px: { xs: 0.5, md: 1 },
+                    '& .MuiButton-startIcon': { 
+                      mx: { xs: 0, md: 'auto' },
+                      mr: { xs: 0.5, md: 1 }
+                    }
+                  }}
                   startIcon={<Logout fontSize="small" />}
                 >
                   Logout
